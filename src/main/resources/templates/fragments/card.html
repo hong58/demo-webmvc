@@ -1,0 +1,27 @@
+<section>
+  <div th:fragment="cardImg(id, isbn, title, author, price, year)" class="card">
+    <img class="card-img-top" src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop" alt="">
+    <div class="card-body">
+      <h5 class="card-title" th:text="${title}"></h5>
+      <p class="card-text" th:text="|${author} (${year})|"></p>
+      <a class="btn btn-outline-success" th:text="|USD ${price}|"></a>
+      <a th:href="@{/book/{id}(id=${id}, isbn=${isbn})}" class="btn btn-primary">View</a>
+    </div>
+  </div>
+  <div th:fragment="cardLink(id, isbn, title, author, price)" class="card">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+  <div th:fragment="cardNormal(id, isbn, title, author, price)" class="card">
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</section>

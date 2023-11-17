@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+<head>
+    <title>Child Test</title>
+</head>
+<body>
+<div layout:fragment="childLayoutName">
+    <h1>TESTING CHILD LAYOUT</h1>
+</div>
+<th:block layout:fragment="childScript">
+    <script>
+        alert("Hello world!");
+    </script>
+</th:block>
+</body>
+</html>

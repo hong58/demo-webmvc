@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">EMZREM</title>
+    <th:block th:insert="~{fragments/meta}"></th:block>
+    <th:block th:insert="~{fragments/icon}"></th:block>
+    <th:block th:insert="~{fragments/style}"></th:block>
+</head>
+<body>
+<div class="container">
+    <!-- Header Fragment -->
+    <div class="row">
+        <div class="col-12" th:insert="~{fragments/header}"></div>
+    </div>
+
+    <!-- Middle -->
+    <div class="row">
+        <!-- Sidebar Fragment -->
+        <div class="col-3" th:insert="~{fragments/sidebar}"></div>
+
+        <!-- Content -->
+        <div class="col-9">
+            <div layout:fragment="childLayoutName"></div>
+        </div>
+    </div>
+
+    <!-- Footer Fragment -->
+    <div class="row">
+        <div class="col-12" th:insert="~{fragments/footer}"></div>
+    </div>
+</div>
+
+<th:block th:insert="~{fragments/script}"></th:block>
+<th:block layout:fragment="childScript"></th:block>
+</body>
+</html>

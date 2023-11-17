@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+<head>
+    <title>Book Detail</title>
+</head>
+<body>
+<div layout:fragment="childLayoutName">
+    <section th:if="${book != null}">
+        <h1>Book Detail</h1>
+        <hr>
+        <p><span>Title: </span><span th:text="${book.title}"></span></p>
+        <p><span>Author: </span><span th:text="${book.author}"></span></p>
+        <p><span>ISBN: </span><span th:text="${book.isbn}"></span></p>
+        <p><span>Price: </span><span th:text="${book.price}"></span></p>
+        <p><span>Year: </span><span th:text="${book.year}"></span></p>
+    </section>
+    <section th:if="${book == null}">
+        <h1>No Book Found!</h1>
+    </section>
+    <a th:href="@{/book}" class="btn btn-primary btn-block">Back</a>
+</div>
+</body>
+</html>
